@@ -17,10 +17,11 @@ data = {
     "version": "latest"
 }
 
-result = requests.post(url=url, headers=headers, data=data)
+result = requests.post(url=url, headers=headers, json=data)
+print(result)
 image = result.json()['image']
 
-print(result.json())
+
 
 
 with open("output.png", "wb") as fh:
